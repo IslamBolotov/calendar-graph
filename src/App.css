@@ -1,38 +1,135 @@
 .App {
-  text-align: center;
+  margin: 100px auto;
+  width: fit-content;
+  margin-left: 50px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.activity {
+  display: flex;
+  gap: 2px;
+  justify-content: center;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.months {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.month_name {
+  color: #959494;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.weeks {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  gap: 2px;
 }
 
-.App-link {
-  color: #61dafb;
+.day {
+  position: relative;
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  background-color: #EDEDED;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.days_of_week {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  margin-right: 2px;
+}
+
+.day_of_week {
+  color: #959494;
+  text-align: center;
+  font-size: 12px;
+  height: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.day .tooltip_text {
+  visibility: hidden;
+  width: 145px;
+  background-color: #000000;
+  text-align: center;
+  border-radius: 3px;
+  padding: 5px 10px;
+  position: absolute;
+  z-index: 1;
+  bottom: 150%;
+  left: -75px;
+}
+
+.tooltip_text-contributions {
+  color: #fff;
+  font-size: 12px;
+}
+
+.tooltip_text-date {
+  color: #7C7C7C;
+  margin-top: 7px;
+  font-size: 10px;
+  white-space: nowrap;
+}
+
+.day .tooltip_text::after {
+  content: " ";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: black transparent transparent transparent;
+}
+
+.day:hover {
+  border: 1px solid rgba(0, 0, 0, 0.50);
+}
+
+.day:hover .tooltip_text {
+  visibility: visible;
+}
+
+.description {
+  display: flex;
+  align-items: end;
+  margin-top: 30px;
+  gap: 2px;
+}
+
+.description_text {
+  color: #959494;
+  font-size: 12px;
+  font-family: Inter;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.low {
+  background-color: #ACD5F2;
+}
+
+.normal {
+  background-color: #7FA8C9;
+}
+
+.medium {
+  background-color: #527BA0;
+} 
+
+.high {
+  background-color: #254E77;
 }
